@@ -1,0 +1,30 @@
+% Program to demonstrate the concept of "Bit Level Slicing" of a given gray
+% level image
+clc;
+clear all;
+close all;
+% read an image
+im = imread('face.jpg');
+bit1 = bitget(im, 1);   % lsb for example
+bit2 = bitget(im, 2);
+bit3 = bitget(im, 3);   % lsb for example
+bit4 = bitget(im, 4);
+bit5 = bitget(im, 5);   % lsb for example
+bit6 = bitget(im, 6);
+bit7 = bitget(im, 7);   % lsb for example
+bit8 = bitget(im, 8);
+[rows, columns, numberOfColorBands] = size(B);
+if numberOfColorBands > 1
+	% It's not really gray scale like we expected - it's color.
+	% Convert it to gray scale.
+	grayImage = rgb2gray(B); % Take weighted average of channels.
+end
+subplot(2, 2, 1), imshow(bit1, []), title('1. Bit');
+subplot(2, 2, 2), imshow(bit2, []), title('2 Bit');
+subplot(2, 2, 3), imshow(bit1, []), title('3. Bit');
+subplot(2, 2, 4), imshow(bit2, []), title('4. Bit');
+subplot(2, 2, 5), imshow(bit1, []), title('5. Bit');
+subplot(2, 2, 6), imshow(bit2, []), title('6. Bit');
+subplot(2, 2, 7), imshow(bit1, []), title('7. Bit');
+subplot(2, 2, 8), imshow(bit2, []), title('8. Bit');
+subplot(2, 2, 3), imshow(greyImage, []), title('grey');

@@ -1,0 +1,13 @@
+
+function hw ( )
+  fprintf ( 1, '\n' );
+  fprintf ( 1, 'Hw2\n' );
+  A = imread('cameraman.jpg');
+  v = haar_2d ( A );
+  inverse_v = haar_2d_inverse ( v );
+  subplot(1,2,1),imshow(v,[])
+  subplot(1,2,2),imshow(inverse_v,[])
+  err = norm(doubA, inverse_v);
+  fprintf('\n The mean-squared error is %0.4f\n', err);
+  return
+end
